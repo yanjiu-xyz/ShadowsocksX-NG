@@ -87,7 +87,7 @@ class ServerProfile: NSObject, NSCopying {
             self.method = user.lowercased()
             self.password = password
             if let tag = _tag {
-                remark = tag
+                remark = tag.removingPercentEncoding ?? tag
             }
         } else {
             // SIP002 URL have no password section
